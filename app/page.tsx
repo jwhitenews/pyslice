@@ -1,4 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
+
+<Link className="inline-block mt-6 px-4 py-2 rounded border hover:bg-gray-50" href="/lessons/intro/step/1">
+  Start: Intro to APIs →
+</Link>
 
 export default function Home() {
   return (

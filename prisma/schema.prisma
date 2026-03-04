@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model ApiRun {
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+
+  host            String
+  method          String
+  url             String
+
+  upstreamStatus  Int?
+  ok              Boolean
+  durationMs      Int?
+
+  error           String?
+  responsePreview String?
+
+  // NEW: lesson context
+  lessonSlug      String?
+  stepId          String?
+}
